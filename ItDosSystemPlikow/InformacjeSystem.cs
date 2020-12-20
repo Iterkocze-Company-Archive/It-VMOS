@@ -13,7 +13,7 @@ namespace CosmosKernel2
             Console.WriteLine($"Ilosc wolnego miejsca: {Kernel.fs.GetAvailableFreeSpace("0:/") / 1000000}MB");
             Console.WriteLine($"Typ systemu plikow: {Kernel.fs.GetFileSystemType("0:/")}");
 
-            System.Menu(false);
+            WyborFunkcjiVoid.wyborFunkcjiVoid();
         }
     }
 }

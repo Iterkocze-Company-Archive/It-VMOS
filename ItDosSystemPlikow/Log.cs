@@ -4,7 +4,6 @@ namespace CosmosKernel2
 {
     class Log
     {
-
         public static void Error(string s)
         {
             Console.ForegroundColor = ConsoleColor.Red;

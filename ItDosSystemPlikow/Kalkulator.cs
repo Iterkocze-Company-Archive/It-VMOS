@@ -21,7 +21,7 @@ namespace CosmosKernel2
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                Log.Error(e.Message + "\n");
                 Console.ReadKey();
                 dodawanie();
             }
@@ -51,14 +51,13 @@ namespace CosmosKernel2
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                Log.Error(e.Message + "\n");
                 Console.ReadKey();
                 dodawanie();
             }
 
             Console.ReadKey();
 
-            Console.Clear();
             System.Menu(true);
         }
 
@@ -80,14 +79,13 @@ namespace CosmosKernel2
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                Log.Error(e.Message + "\n");
                 Console.ReadKey();
                 dodawanie();
             }
 
             Console.ReadKey();
 
-            Console.Clear();
             System.Menu(true);
         }
 
@@ -109,14 +107,13 @@ namespace CosmosKernel2
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                Log.Error(e.Message + "\n");
                 Console.ReadKey();
                 dodawanie();
             }
 
             Console.ReadKey();
 
-            Console.Clear();
             System.Menu(true);
         }
 
@@ -138,14 +135,13 @@ namespace CosmosKernel2
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                Log.Error(e.Message + "\n");
                 Console.ReadKey();
                 dodawanie();
             }
 
             Console.ReadKey();
 
-            Console.Clear();
             System.Menu(true);
         }
 
@@ -167,14 +163,12 @@ namespace CosmosKernel2
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
-                Console.ReadKey();
+                Log.Error(e.Message + "\n");
                 dodawanie();
             }
 
             Console.ReadKey();
 
-            Console.Clear();
             System.Menu(true);
         }
     }

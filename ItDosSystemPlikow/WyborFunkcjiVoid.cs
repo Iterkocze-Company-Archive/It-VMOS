@@ -13,7 +13,7 @@ namespace CosmosKernel2
             {
                 case "kalkulator":
                     Console.Clear();
-                   
+                    
                     Console.WriteLine("1 - Dodawanie");
                     Console.WriteLine("2 - Odejmowanie");
                     Console.WriteLine("3 - Mnozenie");
@@ -90,7 +90,7 @@ namespace CosmosKernel2
                     break;
 
                 case "dir":
-                    SystemPlikow.PokazWszystkiePliki(function);
+                    SystemPlikow.Dir(function);
                     break;
 
                 case "fcreate":

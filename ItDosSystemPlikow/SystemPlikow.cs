@@ -6,11 +6,15 @@ namespace CosmosKernel2
 {
     class SystemPlikow
     {
-        public static void PokazWszystkiePliki(string[] function)
+        public static void Dir(string[] function)
         {
-            string directory = function[1];
+            var files = Kernel.fs.GetDirectoryListing("0:/");
+            if (function.Length > 1)
+            {
+                string directory = function[1];
 
-            var files = Kernel.fs.GetDirectoryListing($"0:/{directory}");
+                files = Kernel.fs.GetDirectoryListing($"0:/{directory}");
+            }
             foreach (var directoryEntry in files)
             {
                 Console.WriteLine(directoryEntry.mName);
@@ -29,7 +33,7 @@ namespace CosmosKernel2
                     WyborFunkcjiVoid.wyborFunkcjiVoid();
                 }
             }
-
+            
             try
             {
                 if (fileName.Substring(fileName.Length - 4) == ".txt")

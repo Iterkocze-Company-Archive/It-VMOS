@@ -23,13 +23,13 @@ namespace CosmosKernel2
 
         public static void StworzPlik()
         {
-            Console.Write("Wprowadz nazwe pliku: ");
+            Console.Write("Wprowadz sciezke do pliku: ");
             string fileName = Console.ReadLine();
             foreach (char c in fileName)
             {
-                if (c == ' ' || c ==  '/')
+                if (c == ' ')
                 {
-                    Console.WriteLine("W nazwie pliku nie moze byc znaku / ani spacji");
+                    Console.WriteLine("W sciezce nie moze byc spacji");
                     WyborFunkcjiVoid.wyborFunkcjiVoid();
                 }
             }
@@ -54,7 +54,7 @@ namespace CosmosKernel2
 
         public static void OtworzPlik()
         {
-            Console.Write("Wpisz nazwe pliku: ");
+            Console.Write("Wpisz sciezke do pliku: ");
             string fileName = Console.ReadLine();
             try
             {
@@ -80,7 +80,7 @@ namespace CosmosKernel2
 
         public static void UsunPlik()
         {
-            Console.Write("Wprowadz nazwe pliku: ");
+            Console.Write("Wprowadz sciezke do pliku: ");
             string fileName = Console.ReadLine();
             if (fileName.Substring(fileName.Length - 4) == ".txt")
             {
@@ -96,7 +96,7 @@ namespace CosmosKernel2
 
         public static void EdytujPlik()
         {
-             Console.Write("Wpisz nazwe pliku: ");
+             Console.Write("Wpisz sciezke do pliku: ");
              string fileName = Console.ReadLine();
              var file = Kernel.fs.GetFile($@"0:\{fileName}");
              var fileStream = file.GetFileStream();

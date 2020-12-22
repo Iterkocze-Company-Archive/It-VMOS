@@ -14,7 +14,6 @@ namespace CosmosKernel2
             can.Clear(Color.Black);
             Pen p = new Pen(Color.Red);
 
-            Random rnd = new Random();
             int x = 0;
             int y = 0;
 

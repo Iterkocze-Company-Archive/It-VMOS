@@ -54,11 +54,7 @@ namespace CosmosKernel2
                     break;
 
                 case "pomoc":
-                    Console.Clear();
                     Console.WriteLine("kalkulator, grap, gry, benchmark, systeminfo, shutdown, reboot, pomoc, fcreate, dir, fdelete, cls, fopen, fedit");
-                    Console.ReadKey();
-                    Console.Clear();
-                    System.Menu(true);
                     break;
 
                 case "grap":
@@ -94,11 +90,11 @@ namespace CosmosKernel2
                     break;
 
                 case "fcreate":
-                    SystemPlikow.StworzPlik();
+                    SystemPlikow.StworzPlik(function);
                     break;
 
                 case "fdelete":
-                    SystemPlikow.UsunPlik();
+                    SystemPlikow.UsunPlik(function);
                     break;
 
                 case "cls":
@@ -106,11 +102,11 @@ namespace CosmosKernel2
                     break;
 
                 case "fopen":
-                    SystemPlikow.OtworzPlik();
+                    SystemPlikow.OtworzPlik(function);
                     break;
 
                 case "fedit":
-                    SystemPlikow.EdytujPlik();
+                    SystemPlikow.EdytujPlik(function);
                     break;
                     
                 default:

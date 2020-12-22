@@ -8,12 +8,13 @@ namespace CosmosKernel2
     {
         public static void Dir(string[] function)
         {
-            var files = Kernel.fs.GetDirectoryListing("0:/");
+            var files = Kernel.fs.GetDirectoryListing(@"0:/");
+
             if (function.Length > 1)
             {
                 string directory = function[1];
 
-                files = Kernel.fs.GetDirectoryListing($"0:/{directory}");
+                files = Kernel.fs.GetDirectoryListing($@"0:/{directory}");
             }
             foreach (var directoryEntry in files)
             {
@@ -21,91 +22,118 @@ namespace CosmosKernel2
             }
         }
 
-        public static void StworzPlik()
+        public static void StworzPlik(string[] function)
         {
-            Console.Write("Wprowadz sciezke do pliku: ");
-            string fileName = Console.ReadLine();
-            foreach (char c in fileName)
+            string filePath = $@"0:/{function[1]}";
+
+            if (function.Length == 1)
             {
-                if (c == ' ')
-                {
-                    Console.WriteLine("W sciezce nie moze byc spacji");
-                    WyborFunkcjiVoid.wyborFunkcjiVoid();
-                }
+                Log.Error("\nMusi byc podana sciezka pliku\n");
             }
-            
-            try
+            else
             {
-                if (fileName.Substring(fileName.Length - 4) == ".txt")
+                foreach (char c in filePath)
                 {
-                    Kernel.fs.CreateFile($@"0:\{fileName}");
+                    if (c == ' ')
+                    {
+                        Console.WriteLine("W sciezce nie moze byc spacji.");
+                        WyborFunkcjiVoid.wyborFunkcjiVoid();
+                    }
                 }
-                else
+
+                try
                 {
-                    Kernel.fs.CreateDirectory($@"0:\{fileName}");
+                    if (filePath.Substring(filePath.Length - 4) == ".txt")
+                    {
+                        Kernel.fs.CreateFile($@"0:/{filePath}");
+                    }
+                    else
+                    {
+                        Kernel.fs.CreateDirectory($@"0:/{filePath}");
+                    }
                 }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine($"\n{e.Message}\n");
+                catch (Exception e)
+                {
+                    Console.WriteLine($"\n{e.Message}\n");
+                }
             }
         }
         
 
-        public static void OtworzPlik()
+        public static void OtworzPlik(string[] function)
         {
-            Console.Write("Wpisz sciezke do pliku: ");
-            string fileName = Console.ReadLine();
-            try
-            {
-                string filePath = $@"0:/{fileName}";
-                DirectoryEntry dir = Kernel.fs.GetFile(filePath);
-                var fileStream = dir.GetFileStream();
+            string filePath = $@"0:/{function[1]}";
 
-                if (fileName.Substring(fileName.Length - 4) == ".txt")
-                {
-                    if (fileStream.CanRead)
-                    {
-                        byte[] fileText = new byte[fileStream.Length];
-                        fileStream.Read(fileText, 0, (int)fileStream.Length);
-                        Console.WriteLine(Encoding.Default.GetString(fileText));
-                    }
-                }
-            }
-            catch (Exception e)
+            if (function.Length == 1)
             {
-                Console.WriteLine($"\n{e.Message}\n");
-            }
-        }
-
-        public static void UsunPlik()
-        {
-            Console.Write("Wprowadz sciezke do pliku: ");
-            string fileName = Console.ReadLine();
-            if (fileName.Substring(fileName.Length - 4) == ".txt")
-            {
-                DirectoryEntry dir = Kernel.fs.GetFile($@"0:/{fileName}");
-                Kernel.fs.DeleteFile(dir);
+                Log.Error("\nMusi byc podana sciezka pliku.\n");
             }
             else
             {
-                DirectoryEntry dir = Kernel.fs.GetDirectory($@"0:/{fileName}");
-                Kernel.fs.DeleteDirectory(dir);
+                try
+                {
+                    DirectoryEntry dir = Kernel.fs.GetFile(filePath);
+                    var fileStream = dir.GetFileStream();
+
+                    if (filePath.Substring(filePath.Length - 4) == ".txt")
+                    {
+                        if (fileStream.CanRead)
+                        {
+                            byte[] fileText = new byte[fileStream.Length];
+                            fileStream.Read(fileText, 0, (int)fileStream.Length);
+                            Console.WriteLine(Encoding.Default.GetString(fileText));
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"\n{e.Message}\n");
+                }
             }
         }
 
-        public static void EdytujPlik()
+        public static void UsunPlik(string[] function)
         {
-             Console.Write("Wpisz sciezke do pliku: ");
-             string fileName = Console.ReadLine();
-             var file = Kernel.fs.GetFile($@"0:\{fileName}");
-             var fileStream = file.GetFileStream();
+            string filePath = $@"0:/{function[1]}";
 
-             if (fileStream.CanWrite)
-             {
-                 string text = Console.ReadLine();
-                 fileStream.Write(Encoding.ASCII.GetBytes(text), 0, Encoding.ASCII.GetBytes(text).Length);
-             }
+            if (function.Length == 1)
+            {
+                Log.Error("\nMusi byc podana sciezka pliku.\n");
+            }
+            else
+            {
+                if (filePath.Substring(filePath.Length - 4) == ".txt")
+                {
+                    DirectoryEntry dir = Kernel.fs.GetFile($@"0:/{filePath}");
+                    Kernel.fs.DeleteFile(dir);
+                }
+                else
+                {
+                    DirectoryEntry dir = Kernel.fs.GetDirectory($@"0:/{filePath}");
+                    Kernel.fs.DeleteDirectory(dir);
+                }
+            }
+        }
+
+        public static void EdytujPlik(string[] function)
+        {
+            string filePath = $@"0:/{function[1]}";
+
+            if (function.Length == 1)
+            {
+                Log.Error("\nMusi byc podana sciezka pliku.\n");
+            }
+            else
+            {
+                var file = Kernel.fs.GetFile($@"0:/{filePath}");
+                var fileStream = file.GetFileStream();
+
+                if (fileStream.CanWrite)
+                {
+                    string text = Console.ReadLine();
+                    fileStream.Write(Encoding.ASCII.GetBytes(text), 0, Encoding.ASCII.GetBytes(text).Length);
+                }
+            }
         }
     }
 }

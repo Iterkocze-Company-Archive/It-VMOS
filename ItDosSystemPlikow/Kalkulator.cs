@@ -4,26 +4,26 @@ namespace CosmosKernel2
 {
     public static class Kalkulator
     {
-        public static void dodawanie()
+        public static void Addition()
         {
             try
             {
                 Console.Write("Wpisz liczbe X: ");
-                float liczbaX = Convert.ToInt32(Console.ReadLine());
+                float a = Convert.ToInt32(Console.ReadLine());
 
                 Console.Write("Wpisz liczbe Y: ");
-                float liczbaY = Convert.ToInt32(Console.ReadLine());
+                float b = Convert.ToInt32(Console.ReadLine());
 
-                float suma = liczbaX + liczbaY;
+                float c = a + b;
 
                 Console.Clear();
-                Console.WriteLine("Suma = " + suma);
+                Console.WriteLine("Suma = " + c);
             }
             catch (Exception e)
             {
                 Log.Error(e.Message + "\n");
                 Console.ReadKey();
-                dodawanie();
+                Addition();
             }
             
             Console.ReadKey();
@@ -33,27 +33,27 @@ namespace CosmosKernel2
             
         }
 
-        public static void odejmowanie()
+        public static void Subtraction()
         {
             try
             {
                 Console.Write("Wpisz liczbe X: ");
-                float liczbaX2 = Convert.ToInt32(Console.ReadLine());
+                float a = Convert.ToInt32(Console.ReadLine());
 
                 Console.Write("Wpisz liczbe Y: ");
-                float liczbaY2 = Convert.ToInt32(Console.ReadLine());
+                float b = Convert.ToInt32(Console.ReadLine());
 
-                float roznica = liczbaX2 - liczbaY2;
+                float c = a - b;
 
                 Console.Clear();
 
-                Console.WriteLine("Roznica = " + roznica);
+                Console.WriteLine("Roznica = " + c);
             }
             catch (Exception e)
             {
                 Log.Error(e.Message + "\n");
                 Console.ReadKey();
-                dodawanie();
+                Subtraction();
             }
 
             Console.ReadKey();
@@ -61,27 +61,27 @@ namespace CosmosKernel2
             System.Menu(true);
         }
 
-        public static void mnozenie()
+        public static void Multiplication()
         {
             try
             {
                 Console.Write("Wpisz liczbe X: ");
-                float liczbaX3 = Convert.ToInt32(Console.ReadLine());
+                float a = Convert.ToInt32(Console.ReadLine());
 
                 Console.Write("Wpisz liczbe Y: ");
-                float liczbaY3 = Convert.ToInt32(Console.ReadLine());
+                float b = Convert.ToInt32(Console.ReadLine());
 
-                float roznica = liczbaX3 * liczbaY3;
+                float c = a * b;
 
                 Console.Clear();
 
-                Console.WriteLine("Iloczyn = " + roznica);
+                Console.WriteLine("Iloczyn = " + c);
             }
             catch (Exception e)
             {
                 Log.Error(e.Message + "\n");
                 Console.ReadKey();
-                dodawanie();
+                Multiplication();
             }
 
             Console.ReadKey();
@@ -89,27 +89,27 @@ namespace CosmosKernel2
             System.Menu(true);
         }
 
-        public static void dzielenie()
+        public static void Division()
         {
             try
             {
                 Console.Write("Wpisz liczbe X: ");
-                float liczbaX4 = Convert.ToInt32(Console.ReadLine());
+                float a = Convert.ToInt32(Console.ReadLine());
 
                 Console.Write("Wpisz liczbe Y: ");
-                float liczbaY4 = Convert.ToInt32(Console.ReadLine());
+                float b = Convert.ToInt32(Console.ReadLine());
 
-                float roznica = liczbaX4 / liczbaY4;
+                float c = a / b;
 
                 Console.Clear();
 
-                Console.WriteLine("Iloraz = " + roznica);
+                Console.WriteLine("Iloraz = " + c);
             }
             catch (Exception e)
             {
                 Log.Error(e.Message + "\n");
                 Console.ReadKey();
-                dodawanie();
+                Division();
             }
 
             Console.ReadKey();
@@ -117,27 +117,27 @@ namespace CosmosKernel2
             System.Menu(true);
         }
 
-        public static void Potegowanie()
+        public static void Exponentiation()
         {
             try
             {
                 Console.Write("Wpisz liczbe: ");
-                int liczbaX6 = Convert.ToInt32(Console.ReadLine());
+                int a = Convert.ToInt32(Console.ReadLine());
 
                 Console.Write("Do potegi?: ");
-                int liczbaY6 = Convert.ToInt32(Console.ReadLine());
+                int b = Convert.ToInt32(Console.ReadLine());
 
-                double modulo = Math.Pow(liczbaX6, liczbaY6);
+                double c = Math.Pow(a, b);
 
                 Console.Clear();
 
-                Console.WriteLine("Wynik = " + modulo);
+                Console.WriteLine("Wynik = " + c);
             }
             catch (Exception e)
             {
                 Log.Error(e.Message + "\n");
                 Console.ReadKey();
-                dodawanie();
+                Exponentiation();
             }
 
             Console.ReadKey();
@@ -150,21 +150,21 @@ namespace CosmosKernel2
             try
             {
                 Console.Write("Wpisz liczbe X: ");
-                float liczbaX5 = Convert.ToInt32(Console.ReadLine());
+                float a = Convert.ToInt32(Console.ReadLine());
 
                 Console.Write("Wpisz liczbe Y: ");
-                float liczbaY5 = Convert.ToInt32(Console.ReadLine());
+                float b = Convert.ToInt32(Console.ReadLine());
 
-                float potega = liczbaX5 % liczbaY5;
+                float c = a % b;
 
                 Console.Clear();
 
-                Console.WriteLine("Wynik = " + potega);
+                Console.WriteLine("Wynik = " + c);
             }
             catch (Exception e)
             {
                 Log.Error(e.Message + "\n");
-                dodawanie();
+                Modulo();
             }
 
             Console.ReadKey();

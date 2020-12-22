@@ -25,26 +25,26 @@ namespace CosmosKernel2
                     {
                         case "1":
                         case "dodawanie":
-                            Kalkulator.dodawanie();
+                            Kalkulator.Addition();
                             break;
 
                         case "2":
                         case "odejmowanie":
-                            Kalkulator.odejmowanie();
+                            Kalkulator.Subtraction();
                             break;
 
                         case "3":
                         case "mnozenie":
-                            Kalkulator.mnozenie();
+                            Kalkulator.Multiplication();
                             break;
 
                         case "4":
                         case "dzielenie":
-                            Kalkulator.dzielenie();
+                            Kalkulator.Division();
                             break;
                         case "5":
                         case "potegowanie":
-                            Kalkulator.Potegowanie();
+                            Kalkulator.Exponentiation();
                             break;
                         case "6":
                         case "dzielenie z reszta":

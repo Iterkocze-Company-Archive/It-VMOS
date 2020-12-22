@@ -103,9 +103,8 @@ namespace CosmosKernel2
 
              if (fileStream.CanWrite)
              {
-                 string tekst = Console.ReadLine();
-                 byte[] text_do_zapisania = Encoding.ASCII.GetBytes(tekst);
-                 fileStream.Write(text_do_zapisania, 0, text_do_zapisania.Length);
+                 string text = Console.ReadLine();
+                 fileStream.Write(Encoding.ASCII.GetBytes(text), 0, Encoding.ASCII.GetBytes(text).Length);
              }
         }
     }

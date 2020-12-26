@@ -11,7 +11,7 @@ namespace CosmosKernel2
                 Console.Clear();
             }
             Console.WriteLine("Witaj w Systemie IT-DOS!");
-            WyborFunkcjiVoid.wyborFunkcjiVoid();
+            CommandPrompt.Prompt();
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace CosmosKernel2
 {
-    public static class Kalkulator
+    public static class Calculator
     {
         public static void Addition()
         {
@@ -16,21 +16,13 @@ namespace CosmosKernel2
 
                 float c = a + b;
 
-                Console.Clear();
                 Console.WriteLine("Suma = " + c);
             }
             catch (Exception e)
             {
-                Log.Error(e.Message + "\n");
-                Console.ReadKey();
+                Log.Error("\n" + e.Message + "\n");
                 Addition();
             }
-            
-            Console.ReadKey();
-
-            Console.Clear();
-            System.Menu(true);
-            
         }
 
         public static void Subtraction()
@@ -45,20 +37,13 @@ namespace CosmosKernel2
 
                 float c = a - b;
 
-                Console.Clear();
-
                 Console.WriteLine("Roznica = " + c);
             }
             catch (Exception e)
             {
-                Log.Error(e.Message + "\n");
-                Console.ReadKey();
+                Log.Error("\n" + e.Message + "\n");
                 Subtraction();
             }
-
-            Console.ReadKey();
-
-            System.Menu(true);
         }
 
         public static void Multiplication()
@@ -73,20 +58,13 @@ namespace CosmosKernel2
 
                 float c = a * b;
 
-                Console.Clear();
-
                 Console.WriteLine("Iloczyn = " + c);
             }
             catch (Exception e)
             {
-                Log.Error(e.Message + "\n");
-                Console.ReadKey();
+                Log.Error("\n" + e.Message + "\n");
                 Multiplication();
             }
-
-            Console.ReadKey();
-
-            System.Menu(true);
         }
 
         public static void Division()
@@ -101,20 +79,13 @@ namespace CosmosKernel2
 
                 float c = a / b;
 
-                Console.Clear();
-
                 Console.WriteLine("Iloraz = " + c);
             }
             catch (Exception e)
             {
-                Log.Error(e.Message + "\n");
-                Console.ReadKey();
+                Log.Error("\n" + e.Message + "\n");
                 Division();
             }
-
-            Console.ReadKey();
-
-            System.Menu(true);
         }
 
         public static void Exponentiation()
@@ -129,20 +100,13 @@ namespace CosmosKernel2
 
                 double c = Math.Pow(a, b);
 
-                Console.Clear();
-
                 Console.WriteLine("Wynik = " + c);
             }
             catch (Exception e)
             {
-                Log.Error(e.Message + "\n");
-                Console.ReadKey();
+                Log.Error("\n" + e.Message + "\n");
                 Exponentiation();
             }
-
-            Console.ReadKey();
-
-            System.Menu(true);
         }
 
         public static void Modulo()
@@ -157,19 +121,13 @@ namespace CosmosKernel2
 
                 float c = a % b;
 
-                Console.Clear();
-
                 Console.WriteLine("Wynik = " + c);
             }
             catch (Exception e)
             {
-                Log.Error(e.Message + "\n");
+                Log.Error("\n" + e.Message + "\n");
                 Modulo();
             }
-
-            Console.ReadKey();
-
-            System.Menu(true);
         }
     }
 }

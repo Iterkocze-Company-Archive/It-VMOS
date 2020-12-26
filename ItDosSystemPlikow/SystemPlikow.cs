@@ -13,13 +13,12 @@ namespace CosmosKernel2
             if (function.Length > 1)
             {
                 string directory = function[1];
-                files = Kernel.fs.GetDirectoryListing($@"{directory}");
+                files = Kernel.fs.GetDirectoryListing($@"0:/{directory}");
             }
             foreach (var directoryEntry in files)
             {
                 Console.WriteLine(directoryEntry.mName);
             }
-            WyborFunkcjiVoid.wyborFunkcjiVoid();
         }
 
         public static void StworzPlik(string[] function)
@@ -30,7 +29,7 @@ namespace CosmosKernel2
             }
             else
             {
-                string filePath = $@"{function[1]}";
+                string filePath = $@"0:/{function[1]}";
 
                 foreach (char c in filePath)
                 {
@@ -56,7 +55,6 @@ namespace CosmosKernel2
                     Console.WriteLine($"\n{e.Message}\n");
                 }
             }
-            WyborFunkcjiVoid.wyborFunkcjiVoid();
         }
         
 
@@ -90,7 +88,6 @@ namespace CosmosKernel2
                     Console.WriteLine($"\n{e.Message}\n");
                 }
             }
-            WyborFunkcjiVoid.wyborFunkcjiVoid();
         }
 
         public static void UsunPlik(string[] function)
@@ -103,18 +100,20 @@ namespace CosmosKernel2
             {
                 string filePath = $@"0:/{function[1]}";
 
-                if (filePath.Substring(filePath.Length - 4) == ".txt")
+                Console.WriteLine("3");
+                if (function[1].Substring(function[1].Length - 4) == ".txt")
                 {
+                    Console.WriteLine("1");
                     DirectoryEntry dir = Kernel.fs.GetFile(filePath);
                     Kernel.fs.DeleteFile(dir);
                 }
                 else
                 {
+                    Console.WriteLine("2");
                     DirectoryEntry dir = Kernel.fs.GetDirectory(filePath);
                     Kernel.fs.DeleteDirectory(dir);
                 }
             }
-            WyborFunkcjiVoid.wyborFunkcjiVoid();
         }
 
         public static void EdytujPlik(string[] function)
@@ -133,7 +132,6 @@ namespace CosmosKernel2
                     fileStream.Write(Encoding.ASCII.GetBytes(text), 0, Encoding.ASCII.GetBytes(text).Length);
                 }
             }
-            WyborFunkcjiVoid.wyborFunkcjiVoid();
         }
         
 

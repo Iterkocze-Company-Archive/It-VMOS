@@ -11,7 +11,6 @@ namespace CosmosKernel2
             VGACanvas can = new VGACanvas();
             VGAScreen.SetGraphicsMode(VGADriver.ScreenSize.Size640x480, ColorDepth.ColorDepth4);
             can.Clear(Color.Blue);
-            
         } 
     }
 }

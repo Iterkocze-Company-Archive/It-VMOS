@@ -1,13 +1,14 @@
 ﻿using System;
+using Cosmos.System.FileSystem.Listing;
 
 namespace CosmosKernel2
 {
-    static public class WyborFunkcjiVoid
+    static public class CommandPrompt
     {
-        public static void wyborFunkcjiVoid()
+        public static void Prompt()
         {
-            Console.Write("> ");
-            string selectedFunction = Console.ReadLine();
+            global::System.Console.Write("> ");
+            string selectedFunction = global::System.Console.ReadLine();
             string[] function = selectedFunction.Split(" ");
             switch (function[0])
             {
@@ -20,35 +21,35 @@ namespace CosmosKernel2
                     Console.WriteLine("4 - Dzielenie");
                     Console.WriteLine("5 - Potegowanie");
                     Console.WriteLine("6 - Dzielenie z reszta");
-                    string wyborFunkcjiK = Console.ReadLine();
+                    string wyborFunkcjiK = global::System.Console.ReadLine();
                     switch (wyborFunkcjiK)
                     {
                         case "1":
                         case "dodawanie":
-                            Kalkulator.Addition();
+                            Calculator.Addition();
                             break;
 
                         case "2":
                         case "odejmowanie":
-                            Kalkulator.Subtraction();
+                            Calculator.Subtraction();
                             break;
 
                         case "3":
                         case "mnozenie":
-                            Kalkulator.Multiplication();
+                            Calculator.Multiplication();
                             break;
 
                         case "4":
                         case "dzielenie":
-                            Kalkulator.Division();
+                            Calculator.Division();
                             break;
                         case "5":
                         case "potegowanie":
-                            Kalkulator.Exponentiation();
+                            Calculator.Exponentiation();
                             break;
                         case "6":
                         case "dzielenie z reszta":
-                            Kalkulator.Modulo();
+                            Calculator.Modulo();
                             break;
                     }
                     break;
@@ -113,7 +114,7 @@ namespace CosmosKernel2
                     Log.Error("Nieznana komenda! Wpisz 'pomoc' aby wyswietlic liste komend.");
                     break;
             }
-        wyborFunkcjiVoid();
+        Prompt();
         }
     }
 }

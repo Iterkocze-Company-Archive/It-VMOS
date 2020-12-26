@@ -11,11 +11,7 @@ namespace CosmosKernel2
         {
             Console.Clear();
             Sys.FileSystem.VFS.VFSManager.RegisterVFS(fs);
-            Log.Suk("\nPomyslnie zainicjalizowano system plikow!\nNacisnij dowolny klawisz aby kontynuowac...");
-            Console.ReadKey();
-            Console.Clear();
-            Log.Suk("IT-DOS uruchomiony.\nNacisnij dowolny klawisz aby kontynuowac.");
-            Console.ReadKey();
+            Run();
         }
         protected override void Run()
         {

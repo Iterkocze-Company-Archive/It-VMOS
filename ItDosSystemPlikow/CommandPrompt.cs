@@ -7,51 +7,13 @@ namespace CosmosKernel2
     {
         public static void Prompt()
         {
-            global::System.Console.Write("> ");
-            string selectedFunction = global::System.Console.ReadLine();
+            Console.Write("> ");
+            string selectedFunction = Console.ReadLine();
             string[] function = selectedFunction.Split(" ");
             switch (function[0])
             {
-                case "kalkulator":
-                    Console.Clear();
-                    
-                    Console.WriteLine("1 - Dodawanie");
-                    Console.WriteLine("2 - Odejmowanie");
-                    Console.WriteLine("3 - Mnozenie");
-                    Console.WriteLine("4 - Dzielenie");
-                    Console.WriteLine("5 - Potegowanie");
-                    Console.WriteLine("6 - Dzielenie z reszta");
-                    string wyborFunkcjiK = global::System.Console.ReadLine();
-                    switch (wyborFunkcjiK)
-                    {
-                        case "1":
-                        case "dodawanie":
-                            Calculator.Addition();
-                            break;
-
-                        case "2":
-                        case "odejmowanie":
-                            Calculator.Subtraction();
-                            break;
-
-                        case "3":
-                        case "mnozenie":
-                            Calculator.Multiplication();
-                            break;
-
-                        case "4":
-                        case "dzielenie":
-                            Calculator.Division();
-                            break;
-                        case "5":
-                        case "potegowanie":
-                            Calculator.Exponentiation();
-                            break;
-                        case "6":
-                        case "dzielenie z reszta":
-                            Calculator.Modulo();
-                            break;
-                    }
+                case "calc":
+                    Calculator.CalcCore(function);
                     break;
 
                 case "pomoc":

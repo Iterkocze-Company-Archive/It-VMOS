@@ -1,133 +1,82 @@
 ﻿using System;
+using System.Text;
 
 namespace CosmosKernel2
 {
     public static class Calculator
     {
-        public static void Addition()
+        public static void CalcCore(string[] function)
         {
+            if (function.Length == 1)
+            {
+                Log.Error("\nMusi byc podane dzialanie.\n");
+                CommandPrompt.Prompt();
+            }
+
+            char symbol = ' ';
+            string equation = function[1];
+            foreach (char ch in equation)
+            {
+                if (ch == '+' | ch == '-' | ch == '*' | ch == '/' | ch == '%' | ch == '^')
+                {
+                    symbol = ch;
+                    break;
+                }
+            }
+            if (symbol == ' ')
+            {
+                Log.Error("\nBrak znaku matematycznego w dzialaniu.\n");
+                CommandPrompt.Prompt();
+            }
+
+            string[] numbers = equation.Split(new char[6] { '+', '-', '*', '/', '%', '^'});
+            float result = 0;
             try
             {
-                Console.Write("Wpisz liczbe X: ");
-                float a = Convert.ToInt32(Console.ReadLine());
-
-                Console.Write("Wpisz liczbe Y: ");
-                float b = Convert.ToInt32(Console.ReadLine());
-
-                float c = a + b;
-
-                Console.WriteLine("Suma = " + c);
+                result = float.Parse(numbers[0]);
             }
-            catch (Exception e)
+            catch
             {
-                Log.Error("\n" + e.Message + "\n");
-                Addition();
+                Log.Error("\nW dzialaniu sa nieprawidlowe znaki\n");
+                CommandPrompt.Prompt();
             }
-        }
 
-        public static void Subtraction()
-        {
-            try
+            switch (symbol)
             {
-                Console.Write("Wpisz liczbe X: ");
-                float a = Convert.ToInt32(Console.ReadLine());
-
-                Console.Write("Wpisz liczbe Y: ");
-                float b = Convert.ToInt32(Console.ReadLine());
-
-                float c = a - b;
-
-                Console.WriteLine("Roznica = " + c);
+                case '+':
+                    result += float.Parse(numbers[1]);
+                    break;
+                case '-':
+                    result -= float.Parse(numbers[1]);
+                    break;
+                case '*':
+                    result = result * float.Parse(numbers[1]);
+                    break;
+                case '/':
+                    result = result / float.Parse(numbers[1]);
+                    break;
+                case '%':
+                    result = result % float.Parse(numbers[1]);
+                    break;
+                case '^':
+                    try
+                    {
+                        float a = result;
+                        for (int i = 1; i < Convert.ToInt32(numbers[1]); i++)
+                        {
+                            a = a * result;
+                        }
+                        result = a;
+                    }
+                    catch
+                    {
+                        Log.Error("\nNie mozna potegowac przez liczby niecalkowite.\n");
+                        CommandPrompt.Prompt();
+                    }
+                    break;
             }
-            catch (Exception e)
-            {
-                Log.Error("\n" + e.Message + "\n");
-                Subtraction();
-            }
-        }
 
-        public static void Multiplication()
-        {
-            try
-            {
-                Console.Write("Wpisz liczbe X: ");
-                float a = Convert.ToInt32(Console.ReadLine());
-
-                Console.Write("Wpisz liczbe Y: ");
-                float b = Convert.ToInt32(Console.ReadLine());
-
-                float c = a * b;
-
-                Console.WriteLine("Iloczyn = " + c);
-            }
-            catch (Exception e)
-            {
-                Log.Error("\n" + e.Message + "\n");
-                Multiplication();
-            }
-        }
-
-        public static void Division()
-        {
-            try
-            {
-                Console.Write("Wpisz liczbe X: ");
-                float a = Convert.ToInt32(Console.ReadLine());
-
-                Console.Write("Wpisz liczbe Y: ");
-                float b = Convert.ToInt32(Console.ReadLine());
-
-                float c = a / b;
-
-                Console.WriteLine("Iloraz = " + c);
-            }
-            catch (Exception e)
-            {
-                Log.Error("\n" + e.Message + "\n");
-                Division();
-            }
-        }
-
-        public static void Exponentiation()
-        {
-            try
-            {
-                Console.Write("Wpisz liczbe: ");
-                int a = Convert.ToInt32(Console.ReadLine());
-
-                Console.Write("Do potegi?: ");
-                int b = Convert.ToInt32(Console.ReadLine());
-
-                double c = Math.Pow(a, b);
-
-                Console.WriteLine("Wynik = " + c);
-            }
-            catch (Exception e)
-            {
-                Log.Error("\n" + e.Message + "\n");
-                Exponentiation();
-            }
-        }
-
-        public static void Modulo()
-        {
-            try
-            {
-                Console.Write("Wpisz liczbe X: ");
-                float a = Convert.ToInt32(Console.ReadLine());
-
-                Console.Write("Wpisz liczbe Y: ");
-                float b = Convert.ToInt32(Console.ReadLine());
-
-                float c = a % b;
-
-                Console.WriteLine("Wynik = " + c);
-            }
-            catch (Exception e)
-            {
-                Log.Error("\n" + e.Message + "\n");
-                Modulo();
-            }
+            Console.WriteLine($"wynik: {result}");
         }
     }
 }

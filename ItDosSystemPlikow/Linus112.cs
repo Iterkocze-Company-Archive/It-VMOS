@@ -6,11 +6,10 @@ namespace CosmosKernel2
     {
         public static void Linus()
         {
-            global::System.Console.Clear();
-            global::System.Console.WriteLine("8K? ja mam 768p");
-            global::System.Console.WriteLine("tym tyryymdym tym tym");
-            global::System.Console.WriteLine("lttstore.com");
-            global::System.Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("8K? ja mam 768p");
+            Console.WriteLine("tym tyryymdym tym tym");
+            Console.WriteLine("lttstore.com");
         }
 
     }

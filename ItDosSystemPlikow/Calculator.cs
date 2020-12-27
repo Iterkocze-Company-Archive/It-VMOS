@@ -13,9 +13,20 @@ namespace CosmosKernel2
                 CommandPrompt.Prompt();
             }
 
+            string[] numbers = function[1].Split(new char[6] { '+', '-', '*', '/', '%', '^' });
+            float result = 0;
+            try
+            {
+                result = float.Parse(numbers[0]);
+            }
+            catch
+            {
+                Log.Error("\nW dzialaniu sa nieprawidlowe znaki\n");
+                CommandPrompt.Prompt();
+            }
+
             char symbol = ' ';
-            string equation = function[1];
-            foreach (char ch in equation)
+            foreach (char ch in function[1])
             {
                 if (ch == '+' | ch == '-' | ch == '*' | ch == '/' | ch == '%' | ch == '^')
                 {
@@ -26,18 +37,6 @@ namespace CosmosKernel2
             if (symbol == ' ')
             {
                 Log.Error("\nBrak znaku matematycznego w dzialaniu.\n");
-                CommandPrompt.Prompt();
-            }
-
-            string[] numbers = equation.Split(new char[6] { '+', '-', '*', '/', '%', '^'});
-            float result = 0;
-            try
-            {
-                result = float.Parse(numbers[0]);
-            }
-            catch
-            {
-                Log.Error("\nW dzialaniu sa nieprawidlowe znaki\n");
                 CommandPrompt.Prompt();
             }
 

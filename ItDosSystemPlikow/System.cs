@@ -6,10 +6,7 @@ namespace CosmosKernel2
     {
         public static void Menu(bool clear)
         {
-            if (clear)
-            {
-                Console.Clear();
-            }
+            if (clear) Console.Clear();
             Console.WriteLine("Witaj w Systemie IT-DOS!");
             CommandPrompt.Prompt();
         }

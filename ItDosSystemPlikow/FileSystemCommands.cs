@@ -4,7 +4,7 @@ using Cosmos.System.FileSystem.Listing;
 
 namespace CosmosKernel2
 {
-    class SystemPlikow
+    class FileSystemCommands
     {
         public static void Dir(string[] function)
         {

@@ -29,7 +29,7 @@ namespace CosmosKernel2
             }
             else
             {
-                string filePath = $@"0:/{function[1]}";
+                string filePath = $@"{function[1]}";
 
                 foreach (char c in filePath)
                 {
@@ -98,19 +98,14 @@ namespace CosmosKernel2
             }
             else
             {
-                string filePath = $@"0:/{function[1]}";
-
-                Console.WriteLine("3");
                 if (function[1].Substring(function[1].Length - 4) == ".txt")
                 {
-                    Console.WriteLine("1");
-                    DirectoryEntry dir = Kernel.fs.GetFile(filePath);
+                    DirectoryEntry dir = Kernel.fs.GetFile($"0:/{function[1]}");
                     Kernel.fs.DeleteFile(dir);
                 }
                 else
                 {
-                    Console.WriteLine("2");
-                    DirectoryEntry dir = Kernel.fs.GetDirectory(filePath);
+                    DirectoryEntry dir = Kernel.fs.GetDirectory($"0:/{function[1]}");
                     Kernel.fs.DeleteDirectory(dir);
                 }
             }

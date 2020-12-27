@@ -21,7 +21,7 @@ namespace CosmosKernel2
                     break;
 
                 case "systeminfo":
-                    InformacjeSystem.Informacje_o_Systemie();
+                    SystemInformation.Informacje_o_Systemie();
                     break;
 
                 case "benchmark":

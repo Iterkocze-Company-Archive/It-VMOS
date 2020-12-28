@@ -7,7 +7,7 @@ namespace CosmosKernel2
         public static void Informacje_o_Systemie()
         {
             Console.WriteLine("System: Iterkocze Company. (R) It-VMOS 32-Bit OS");
-            Console.WriteLine("Wersja systemu: 0.0.5.8: Service Pack 1");
+            Console.WriteLine("Wersja systemu: 0.0.5.9: Developer version");
             Console.WriteLine("Data wydania: 28.12.2020");
             Console.WriteLine("RAM: " + Cosmos.Core.CPU.GetAmountOfRAM() + " MB");
             Console.WriteLine($"Ilosc wolnego miejsca: {Kernel.fs.GetAvailableFreeSpace("0:/") / 1000000}MB");

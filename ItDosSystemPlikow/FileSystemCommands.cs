@@ -8,52 +8,47 @@ namespace CosmosKernel2
     {
         public static void Dir(string[] function)
         {
-            var files = Kernel.fs.GetDirectoryListing($"0:/");
+            string path = "";
 
-            if (function.Length > 1)
+            if (function.Length > 1) path = $@"0:/{function[1]}";
+            else path = @"0:/";
+
+            try
             {
-                string directory = function[1];
-                files = Kernel.fs.GetDirectoryListing($@"0:/{directory}");
+                var files = Kernel.fs.GetDirectoryListing(path);
+
+                foreach (var file in files)
+                {
+                    Console.WriteLine(file.mName);
+                }
             }
-            foreach (var directoryEntry in files)
+            catch (Exception e)
             {
-                Console.WriteLine(directoryEntry.mName);
+                Log.Error($"\n{e.Message}\n");
+                CommandPrompt.Prompt();
             }
         }
 
         public static void StworzPlik(string[] function)
         {
-            if (function.Length == 1)
+            foreach (char ch in function[1])
             {
-                Log.Error("\nMusi byc podana sciezka pliku\n");
+                if (ch == ' ')
+                {
+                    Log.Error("\nNazwa pliku nie moze miec spacji.\n");
+                    CommandPrompt.Prompt();
+                }
             }
-            else
+
+            try
             {
-                string filePath = $@"{function[1]}";
-
-                foreach (char c in filePath)
-                {
-                    if (c == ' ')
-                    {
-                        Console.WriteLine("W sciezce nie moze byc spacji.");
-                    }
-                }
-
-                try
-                {
-                    if (filePath.Substring(filePath.Length - 4) == ".txt")
-                    {
-                        Kernel.fs.CreateFile(filePath);
-                    }
-                    else
-                    {
-                        Kernel.fs.CreateDirectory(filePath);
-                    }
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine($"\n{e.Message}\n");
-                }
+                if (function[1].Substring(function[1].Length - 3) == ".txt") Kernel.fs.CreateFile($@"0:\{function[1]}");
+                else Kernel.fs.CreateDirectory($@"0:\{function[1]}");
+            }
+            catch (Exception e)
+            {
+                Log.Error($"\n{e.Message}\n");
+                CommandPrompt.Prompt();
             }
         }
         
@@ -105,7 +100,7 @@ namespace CosmosKernel2
                 }
                 else
                 {
-                    DirectoryEntry dir = Kernel.fs.GetDirectory($"0:/{function[1]}");
+                    DirectoryEntry dir = Kernel.fs.GetDirectory($@"0:/{function[1]}");
                     Kernel.fs.DeleteDirectory(dir);
                 }
             }

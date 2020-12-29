@@ -1,5 +1,5 @@
 ﻿using Cosmos.System.Graphics;
-using System.Drawing;
+using SysD = System.Drawing;
 
 namespace CosmosKernel2
 {
@@ -10,8 +10,8 @@ namespace CosmosKernel2
         {
             VGACanvas can = new VGACanvas();
             VGAScreen.SetGraphicsMode(Cosmos.HAL.VGADriver.ScreenSize.Size640x480, ColorDepth.ColorDepth4);
-            can.Clear(Color.Black);
-            Pen p = new Pen(Color.Red);
+            can.Clear(SysD.Color.Black);
+            Pen p = new Pen(SysD.Color.Red);
 
             int x = 0;
             int y = 0;

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ItDosSystemPlikow
+namespace CosmosKernel2
 {
     public static class Color
     {

@@ -1,6 +1,5 @@
 ﻿using Cosmos.System.Graphics;
 using System.Drawing;
-using System;
 
 namespace CosmosKernel2
 {

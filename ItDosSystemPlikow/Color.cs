@@ -22,7 +22,7 @@ namespace ItDosSystemPlikow
             }
             if (!isColor)
             {
-                Log.Error("\nNie ma takiego koloru\n");
+                Log.Error("\nNie ma takiego koloru.\n");
                 CommandPrompt.Prompt();
             }
 

@@ -65,6 +65,10 @@ namespace CosmosKernel2
                 case "fedit":
                     FileSystemCommands.EdytujPlik(function);
                     break;
+
+                case "color":
+                    Color.ColorChanger(function);
+                    break;
                     
                 default:
                     Log.Error("Nieznana komenda! Wpisz 'pomoc' aby wyswietlic liste komend.");

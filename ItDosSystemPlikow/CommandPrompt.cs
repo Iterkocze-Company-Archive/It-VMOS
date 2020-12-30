@@ -1,5 +1,4 @@
 ﻿using System;
-using Cosmos.System.FileSystem.Listing;
 
 namespace CosmosKernel2
 {
@@ -22,7 +21,7 @@ namespace CosmosKernel2
                     break;
 
                 case "pomoc":
-                    Console.WriteLine("calc, gry, benchmark, systeminfo, shutdown, reboot, pomoc, fcreate, dir, fdelete, cls, fopen, fedit");
+                    Console.WriteLine("calc, gry, benchmark, systeminfo, shutdown, reboot, pomoc, fcreate, dir, fdelete, cls, fopen, fedit, color, date");
                     break;
 
                 case "systeminfo":

@@ -16,6 +16,11 @@ namespace CosmosKernel2
                     Calculator.CalcCore(function);
                     break;
 
+                case "date":
+                    DateTime date = DateTime.Today;
+                    Console.WriteLine($"{date.Day}/{date.Month}/{date.Year}");
+                    break;
+
                 case "pomoc":
                     Console.WriteLine("calc, gry, benchmark, systeminfo, shutdown, reboot, pomoc, fcreate, dir, fdelete, cls, fopen, fedit");
                     break;

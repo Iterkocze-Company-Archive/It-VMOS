@@ -5,6 +5,7 @@ namespace CosmosKernel2
 {
     class Benchmark
     {
+
         public void BenchmarkGO()
         {
             VGACanvas can = new VGACanvas();
@@ -14,10 +15,12 @@ namespace CosmosKernel2
 
             int x = 0;
             int y = 0;
+
             for (int i = 0; i <= 192; i++)
             {
                 for (int j = 0; j <= 40; j++)
                     can.DrawFilledRectangle(p, x, y, j, j);
+
                 x += 40;
                 if (x == 640)
                 {
@@ -25,6 +28,7 @@ namespace CosmosKernel2
                     y += 40;
                 }
             }
+
         }
     }
 }

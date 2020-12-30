@@ -26,7 +26,6 @@ namespace CosmosKernel2
 
                 case "benchmark":
                     Benchmark b1 = new Benchmark();
-
                     b1.BenchmarkGO();
                     break;
 
@@ -67,7 +66,7 @@ namespace CosmosKernel2
                     break;
 
                 case "color":
-                    Color.ColorChanger(function);
+                    CommandColor.ColorChanger(function);
                     break;
                     
                 default:

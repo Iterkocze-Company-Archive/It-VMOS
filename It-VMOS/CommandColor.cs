@@ -28,7 +28,7 @@ namespace CosmosKernel2
                     "2 - Ciemny zielony     10 - Zielony \n" +
                     "3 - Ciemny cyjan       11 - Cyjan \n" +
                     "4 - Ciemny czerwony    12 - Red \n" +
-                    "5 - Ciemny Fiolet      13 - Fiolet \n" +
+                    "5 - Fiolet             13 - Rozowy \n" +
                     "6 - Ciemny zolty       14 - Zolty \n" +
                     "7 - Szary              15 - Bialy \n");
                 CommandPrompt.Prompt();

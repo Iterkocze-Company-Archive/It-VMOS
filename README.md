@@ -1,5 +1,7 @@
 # It-VMOS
 
+![](https://raw.githubusercontent.com/5271/It-VMOS/main/Images/logo.png)
+
 ## Polski
 It-VMOS to mały projekt systemu operacyjnego tworzony przez dwie osoby. Nie jest on zrobiony w żadnych celach komrecyjnych, a tylko dla zabawy i praktyki. 
 Jak najbardziej pozwalamy na korzystanie z kodu źródłowego.

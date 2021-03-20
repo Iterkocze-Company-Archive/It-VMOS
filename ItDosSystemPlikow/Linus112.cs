@@ -11,6 +11,5 @@ namespace CosmosKernel2
             Console.WriteLine("tym tyryymdym tym tym");
             Console.WriteLine("lttstore.com");
         }
-
     }
 }

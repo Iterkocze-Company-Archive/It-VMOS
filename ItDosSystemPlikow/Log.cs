@@ -6,29 +6,29 @@ namespace CosmosKernel2
     {
         public static void Error(string s)
         {
-            global::System.ConsoleColor previousColor = Console.ForegroundColor;
-            Console.ForegroundColor = global::System.ConsoleColor.Red;
+            ConsoleColor previousColor = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(s);
             Console.ForegroundColor = previousColor;
         }
         public static void Info(string s)
         {
-            global::System.ConsoleColor previousColor = Console.ForegroundColor;
-            Console.ForegroundColor = global::System.ConsoleColor.Blue;
+            ConsoleColor previousColor = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine(s);
             Console.ForegroundColor = previousColor;
         }
         public static void Warn(string s)
         {
-            global::System.ConsoleColor previousColor = Console.ForegroundColor;
-            Console.ForegroundColor = global::System.ConsoleColor.Yellow;
+            ConsoleColor previousColor = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(s);
             Console.ForegroundColor = previousColor;
         }
         public static void Suk(string s)
         {
-            global::System.ConsoleColor previousColor = Console.ForegroundColor;
-            Console.ForegroundColor = global::System.ConsoleColor.Green;
+            ConsoleColor previousColor = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(s);
             Console.ForegroundColor = previousColor;
         }

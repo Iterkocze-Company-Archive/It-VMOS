@@ -20,6 +20,10 @@ namespace CosmosKernel2
                     Console.WriteLine($"{date.Day}/{date.Month}/{date.Year}");
                     break;
 
+                case "echo":
+                    Console.WriteLine(function[1]);
+                    break;
+
                 case "pomoc":
                     Console.WriteLine("calc, gry, benchmark, systeminfo, shutdown, reboot, pomoc, fcreate, dir, fdelete, cls, fopen, fedit, color, date");
                     break;
@@ -50,11 +54,11 @@ namespace CosmosKernel2
                     break;
 
                 case "fcreate":
-                    FileSystemCommands.StworzPlik(function);
+                    FileSystemCommands.Fcreate(function);
                     break;
 
                 case "fdelete":
-                    FileSystemCommands.UsunPlik(function);
+                    FileSystemCommands.Fdelete(function);
                     break;
 
                 case "cls":
@@ -62,11 +66,11 @@ namespace CosmosKernel2
                     break;
 
                 case "fopen":
-                    FileSystemCommands.OtworzPlik(function);
+                    FileSystemCommands.Fopen(function);
                     break;
 
                 case "fedit":
-                    FileSystemCommands.EdytujPlik(function);
+                    FileSystemCommands.Fedit(function);
                     break;
 
                 case "color":

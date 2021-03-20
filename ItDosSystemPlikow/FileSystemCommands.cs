@@ -29,7 +29,7 @@ namespace CosmosKernel2
             }
         }
 
-        public static void StworzPlik(string[] function)
+        public static void Fcreate(string[] function)
         {
             foreach (char ch in function[1])
             {
@@ -53,7 +53,7 @@ namespace CosmosKernel2
         }
         
 
-        public static void OtworzPlik(string[] function)
+        public static void Fopen(string[] function)
         {
             if (function.Length == 1)
             {
@@ -85,7 +85,7 @@ namespace CosmosKernel2
             }
         }
 
-        public static void UsunPlik(string[] function)
+        public static void Fdelete(string[] function)
         {
             if (function.Length == 1)
             {
@@ -106,7 +106,7 @@ namespace CosmosKernel2
             }
         }
 
-        public static void EdytujPlik(string[] function)
+        public static void Fedit(string[] function)
         {
             if (function.Length == 1)
             {

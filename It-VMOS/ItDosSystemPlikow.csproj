@@ -24,6 +24,7 @@
         <VMware_PxeInterface>192.168.0.8</VMware_PxeInterface>
         <VMware_EnableGDB>False</VMware_EnableGDB>
         <VMware_StartCosmosGDB>False</VMware_StartCosmosGDB>
+        <ISOFile>bin\Debug\netcoreapp2.0\cosmos\ItDosSystemPlikow.iso</ISOFile>
     </PropertyGroup>
 
     <PropertyGroup>

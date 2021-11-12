@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.30717.126
+VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "It-VMOS", "ItDosSystemPlikow\It-VMOS.csproj", "{8873A916-C4AB-4B3B-9C08-2FA89C679C11}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "It-VMOS", "It-VMOS\It-VMOS.csproj", "{7C368169-3BAE-4F41-B7A3-D3B1BED3A919}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8873A916-C4AB-4B3B-9C08-2FA89C679C11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8873A916-C4AB-4B3B-9C08-2FA89C679C11}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8873A916-C4AB-4B3B-9C08-2FA89C679C11}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8873A916-C4AB-4B3B-9C08-2FA89C679C11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C368169-3BAE-4F41-B7A3-D3B1BED3A919}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C368169-3BAE-4F41-B7A3-D3B1BED3A919}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C368169-3BAE-4F41-B7A3-D3B1BED3A919}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C368169-3BAE-4F41-B7A3-D3B1BED3A919}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {60FEF37A-23F8-48F0-A960-3EC204C01235}
+		SolutionGuid = {C086384F-33FF-4325-93A2-49BCE47F9D8C}
 	EndGlobalSection
 EndGlobal

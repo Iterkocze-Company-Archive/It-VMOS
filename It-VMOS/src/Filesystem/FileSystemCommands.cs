@@ -35,7 +35,7 @@ namespace CosmosKernel2
             {
                 if (ch == ' ')
                 {
-                    Log.Error("\nNazwa pliku nie moze miec spacji.\n");
+                    Log.Error("\nFilename Cannot Contain Blank Spaces.\n");
                     CommandPrompt.Prompt();
                 }
             }
@@ -57,7 +57,7 @@ namespace CosmosKernel2
         {
             if (function.Length == 1)
             {
-                Log.Error("\nMusi byc podana sciezka pliku.\n");
+                Log.Error("\nYou Must Provide a File Path.\n");
             }
             else
             {
@@ -89,7 +89,7 @@ namespace CosmosKernel2
         {
             if (function.Length == 1)
             {
-                Log.Error("\nMusi byc podana sciezka pliku.\n");
+                Log.Error("\nYou Must Provide a File Path.\n");
             }
             else
             {
@@ -110,7 +110,7 @@ namespace CosmosKernel2
         {
             if (function.Length == 1)
             {
-                Log.Error("\nMusi byc podana sciezka pliku.\n");
+                Log.Error("\nYou Must Provide a File Path.\n");
             }
             else
             {
@@ -123,7 +123,5 @@ namespace CosmosKernel2
                 }
             }
         }
-        
-
     }
 }

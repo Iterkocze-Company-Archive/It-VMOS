@@ -15,7 +15,7 @@ namespace CosmosKernel2
                 }
                 catch
                 {
-                    Log.Error("\nNie ma takiego koloru.\n");
+                    Log.Error("\nThere is no such color.\n");
                     CommandPrompt.Prompt();
                 }
                 Console.ForegroundColor = (ConsoleColor)color;
@@ -23,14 +23,14 @@ namespace CosmosKernel2
             else
             { 
                 Console.WriteLine(
-                    "0 - Czarny             8 - Ciemny szary \n" +
-                    "1 - Ciemny niebieski   9 - niebieski \n" +
-                    "2 - Ciemny zielony     10 - Zielony \n" +
-                    "3 - Ciemny cyjan       11 - Cyjan \n" +
-                    "4 - Ciemny czerwony    12 - Red \n" +
-                    "5 - Fiolet             13 - Rozowy \n" +
-                    "6 - Ciemny zolty       14 - Zolty \n" +
-                    "7 - Szary              15 - Bialy \n");
+                    "0 - Dark           8 - Dark Gray \n" +
+                    "1 - Dark Blue      9 - Blue \n" +
+                    "2 - Dark Green     10 - Green \n" +
+                    "3 - Dark Cyan      11 - Cyan \n" +
+                    "4 - Dark Red       12 - Red \n" +
+                    "5 - Violet         13 - Pink \n" +
+                    "6 - Dark Yellow    14 - Yellow \n" +
+                    "7 - Gray           15 - White \n");
                 CommandPrompt.Prompt();
             }
         }

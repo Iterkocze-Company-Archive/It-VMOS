@@ -9,7 +9,7 @@ namespace CosmosKernel2
         {
             if (function.Length == 1)
             {
-                Log.Error("\nMusi byc podane dzialanie.\n");
+                Log.Error("\nYou Must Give a Operation.\n");
                 CommandPrompt.Prompt();
             }
 
@@ -21,7 +21,7 @@ namespace CosmosKernel2
             }
             catch
             {
-                Log.Error("\nW dzialaniu sa nieprawidlowe znaki\n");
+                Log.Error("\nThere Are Invalid Characters In The Operation\n");
                 CommandPrompt.Prompt();
             }
 
@@ -36,7 +36,7 @@ namespace CosmosKernel2
             }
             if (symbol == ' ')
             {
-                Log.Error("\nBrak znaku matematycznego w dzialaniu.\n");
+                Log.Error("\nThere Is No Operation Provided.\n");
                 CommandPrompt.Prompt();
             }
 
@@ -69,13 +69,13 @@ namespace CosmosKernel2
                     }
                     catch
                     {
-                        Log.Error("\nNie mozna potegowac przez liczby niecalkowite.\n");
+                        Log.Error("\nYou Cannot Exponentiate non-integers.\n");
                         CommandPrompt.Prompt();
                     }
                     break;
             }
 
-            Console.WriteLine($"wynik: {result}");
+            Console.WriteLine($"Result: {result}");
         }
     }
 }

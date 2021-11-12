@@ -1,16 +1,31 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CosmosKernel2
 {
     static public class CommandPrompt
     {
+        private static List<string> LastCommands = new List<string>();
+        private static int index = 0;
         public static void Prompt()
         {
             Console.Write("> ");
             string selectedFunction = Console.ReadLine();
+            LastCommands.Add(selectedFunction);
             string[] function = selectedFunction.Split(" ");
-            switch (function[0])
+            switch (function[0].ToLower())
             {
+                case "up":
+                    Console.WriteLine(LastCommands[index]);
+                    index++;
+                    break;
+
+                case "down":
+                    index--;
+                    if (index >= 0) Console.WriteLine(LastCommands[index]);
+                    break;
+
+                case "calculator":
                 case "calc":
                     Calculator.CalcCore(function);
                     break;
@@ -24,12 +39,12 @@ namespace CosmosKernel2
                     Console.WriteLine(function[1]);
                     break;
 
-                case "pomoc":
-                    Console.WriteLine("calc, gry, benchmark, systeminfo, shutdown, reboot, pomoc, fcreate, dir, fdelete, cls, fopen, fedit, color, date");
+                case "help":
+                    Help.ShowHelp();
                     break;
 
                 case "systeminfo":
-                    SystemInformation.Informacje_o_Systemie();
+                    SystemInformation.Show();
                     break;
 
                 case "benchmark":
@@ -61,6 +76,7 @@ namespace CosmosKernel2
                     FileSystemCommands.Fdelete(function);
                     break;
 
+                case "clear":
                 case "cls":
                     Console.Clear();
                     break;
@@ -78,7 +94,7 @@ namespace CosmosKernel2
                     break;
                     
                 default:
-                    Log.Error("Nieznana komenda! Wpisz 'pomoc' aby wyswietlic liste komend.");
+                    Log.Error("Unknown Command! Type 'help' for command list.");
                     break;
             }
         Prompt();

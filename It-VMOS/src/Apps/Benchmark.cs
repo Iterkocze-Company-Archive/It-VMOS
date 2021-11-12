@@ -5,7 +5,6 @@ namespace CosmosKernel2
 {
     class Benchmark
     {
-
         public void BenchmarkGO()
         {
             VGACanvas can = new VGACanvas();

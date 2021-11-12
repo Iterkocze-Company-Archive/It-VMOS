@@ -2,12 +2,12 @@
 
 namespace CosmosKernel2
 {
-    public static class System
+    public static class Menu
     {
-        public static void Menu(bool clear)
+        public static void ShowMenu(bool clear)
         {
             if (clear) Console.Clear();
-            Console.WriteLine("Witaj w Systemie IT-DOS!");
+            Console.WriteLine("Welcome To IT-DOS!");
             CommandPrompt.Prompt();
         }
     }

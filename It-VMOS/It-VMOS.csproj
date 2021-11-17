@@ -11,6 +11,21 @@
         <DebugEnabled>True</DebugEnabled>
         <DebugMode>Source</DebugMode>
         <IgnoreDebugStubAttribute>False</IgnoreDebugStubAttribute>
+        <VMware_StackCorruptionDetectionEnabled>True</VMware_StackCorruptionDetectionEnabled>
+        <VMware_StackCorruptionDetectionLevel>MethodFooters</VMware_StackCorruptionDetectionLevel>
+        <VMware_Description>Use VMware Player or Workstation to deploy and debug.</VMware_Description>
+        <VMware_Deployment>ISO</VMware_Deployment>
+        <VMware_Launch>VMware</VMware_Launch>
+        <VMware_DebugEnabled>True</VMware_DebugEnabled>
+        <VMware_DebugMode>Source</VMware_DebugMode>
+        <VMware_IgnoreDebugStubAttribute>False</VMware_IgnoreDebugStubAttribute>
+        <VMware_CosmosDebugPort>Serial: COM1</VMware_CosmosDebugPort>
+        <VMware_VisualStudioDebugPort>Pipe: Cosmos\Serial</VMware_VisualStudioDebugPort>
+        <VMware_PxeInterface>192.168.0.8</VMware_PxeInterface>
+        <VMware_EnableGDB>False</VMware_EnableGDB>
+        <VMware_StartCosmosGDB>False</VMware_StartCosmosGDB>
+        <EnableBochsDebug>True</EnableBochsDebug>
+        <StartBochsDebugGui>True</StartBochsDebugGui>
     </PropertyGroup>
 
     <PropertyGroup>
@@ -18,9 +33,9 @@
         <StartCosmosGDB>False</StartCosmosGDB>
         <VisualStudioDebugPort>Pipe: Cosmos\Serial</VisualStudioDebugPort>
         <CosmosDebugPort>Serial: COM1</CosmosDebugPort>
-        <Launch>VMware</Launch>
-        <Profile>VMware</Profile>
-        <Description>Use VMware Player or Workstation to deploy and debug.</Description>
+        <Launch>Bochs</Launch>
+        <Profile>Bochs</Profile>
+        <Description>Use Bochs emulator to deploy and debug.</Description>
         <PxeInterface>192.168.0.8</PxeInterface>
     </PropertyGroup>
 
